@@ -10,12 +10,12 @@ apt install -y libbpfcc libelf++0 libelf-dev bpfcc-tools pkg-config libpcap-dev 
 echo "Installing linux tools..."
 sudo apt install -y linux-tools-$(uname -r) linux-tools-common linux-tools-generic
 git submodule init && git submodule update
-cd Dependencies/libbpf/src/
+cd libbpf/src/
 echo "Installing libbpf..."
 make
 echo "Installing libbpf headers..."
 make install_headers
-cd ../../xdp-tools/
+cd ../xdp-tools/
 ./configure
 echo "Installing XDP-tools..."
 make
